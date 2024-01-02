@@ -7,13 +7,16 @@
     <link rel="stylesheet" href="../dist/output.css">
     
 </head>
-<body>
-    <div class="flex items-center justify-center min-h-screen min-w-full">
-        <div class="grid grid-cols-3 border rounded-lg" id="bookShelf">
-            
-        </div>
+<body class="p-28 flex flex-col items-center">
+    <input type="submit" value="📚 NEW BOOK 📚" id="add" class="rounded border w-1/4 cursor-pointer border-gray-600 hover:bg-yellow-300 hover:border-gray-400"></button>
+    <br>
+    <hr class="border border-gray-200 w-1/4">
+    <br>
+    <div class="flex flex-col items-center justify-center bg-[url('../src/bookshelf.jpg')] bg-cover bg-center h-fit">
+        <h1 class="font-semibold text-2xl my-4 mx-96 text-orange-400 tracking-wider">MY LIBRARY</h1>
+        <div class="grid grid-cols-3 grid-rows-7 gap-x-6 gap-y-4 w-[30rem] justify-items-center h-[56rem] translate-y-8" id="bookShelf"></div>
     </div>
-    <input type="button" id="add">Add a book</button>
+    
     <script src="script.js"></script>
 </body>
 </html>
