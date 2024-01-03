@@ -11,11 +11,11 @@ SVG Icons - svgicons.sparkk.fr
     height: 2em;
 }
 
-#removeBtn > .svg-icon path  {
+button[data-class="removeBtn"] > .svg-icon path  {
     fill: red;
 }
 
-#readBtn > .svg-icon path  {
+button[data-class="toggleReadBtn"] > .svg-icon path  {
     fill: green;
 }
 
