@@ -37,7 +37,7 @@ const updateBookShelf = () => {
         bookBlock.classList.add("h-28","w-20","border-3","border-green-400","bg-gray-100","bg-opacity-80","text-blue-800","rounded-md","items-center","justify-center","flex","flex-col");
         bookBlock.setAttribute("id", "book");
         bookCount = document.querySelectorAll("#book").length;
-        bookBlock.setAttribute("data-book-count", bookCount);
+        bookBlock.setAttribute("data-book-index", bookCount);
         // console.log(bookCount);
         bookShelf.append(bookBlock);
         
