@@ -30,7 +30,7 @@ const removeFromLibrary = (bookIndex) => {
 
 const toggleRead = (bookIndex) => {
     myLibrary[bookIndex].isRead = !myLibrary[bookIndex].isRead;
-    const element = document.querySelector(`div#${bookIndex} > button[data-class='toggleReadBtn']`);
+    const element = document.querySelector(`div#book${bookIndex} > button[data-class='toggleReadBtn']`);
     if (element) {
         element.parentNode.removeChild(element);
     }
