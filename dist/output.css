@@ -544,6 +544,14 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.top-5 {
+  top: 1.25rem;
+}
+
 .mx-96 {
   margin-left: 24rem;
   margin-right: 24rem;
@@ -713,14 +721,16 @@ SVG Icons - svgicons.sparkk.fr
 ----- */
 
 .svg-icon {
-  width: 1em;
-  height: 1em;
+  width: 2em;
+  height: 2em;
 }
 
-.svg-icon path,
-.svg-icon polygon,
-.svg-icon rect {
-  fill: #4691f6;
+#removeBtn > .svg-icon path  {
+  fill: red;
+}
+
+#readBtn > .svg-icon path  {
+  fill: green;
 }
 
 .svg-icon circle {
