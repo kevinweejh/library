@@ -1,10 +1,25 @@
 let myLibrary = [];
 
-function Book(title, author, pages) {
-    this.title = title,
-    this.author = author,
-    this.isRead = false, // Toggle to true below
-    this.info = () => {
+// Constructor
+// function Book(title, author, pages) {
+//     this.title = title,
+//     this.author = author,
+//     this.pages = pages,
+//     this.isRead = false, // Toggle to true below
+//     this.info = () => {
+//         return `${title} by ${author}, ${pages} pages.`;
+//     }
+// }
+
+// ES6 Class
+class Book {
+    constructor(title, author, pages) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.isRead = false;
+    }
+    info = () => {
         return `${title} by ${author}, ${pages} pages.`;
     }
 }
@@ -13,8 +28,9 @@ const addToLibrary = (e) => {
     e.preventDefault();
     const newTitle = window.prompt("What is the title of the book you would like to add to the library?");
     const newAuthor = window.prompt("Who wrote this book?");
+    const newPages = window.prompt("How many pages does this book have?");
     
-    const newBook = new Book(newTitle, newAuthor);
+    const newBook = new Book(newTitle, newAuthor, newPages);
 
     myLibrary.push(newBook);
     updateBookShelf(myLibrary);
