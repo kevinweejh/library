@@ -26,9 +26,23 @@ class Book {
 
 const addToLibrary = (e) => {
     e.preventDefault();
-    const newTitle = window.prompt("What is the title of the book you would like to add to the library?");
-    const newAuthor = window.prompt("Who wrote this book?");
-    const newPages = window.prompt("How many pages does this book have?");
+    const modal = document.getElementById('newBookInput');
+    const form = modal.querySelector('form');
+
+    modal.showModal();
+    form.reset();
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (form.checkValidity()) {
+            modal.close();
+        } else {
+            form.reportValidity();
+        }
+    })
+    // const newTitle = window.prompt("What is the title of the book you would like to add to the library?");
+    // const newAuthor = window.prompt("Who wrote this book?");
+    // const newPages = window.prompt("How many pages does this book have?");
     
     const newBook = new Book(newTitle, newAuthor, newPages);
 
