@@ -36,18 +36,18 @@ const addToLibrary = (e) => {
         e.preventDefault();
         if (form.checkValidity()) {
             modal.close();
+            const newTitle = form.querySelector("[name='title']").value;
+            const newAuthor = form.querySelector("[name='author']").value;
+            const newPages = form.querySelector("[name='pageCount']").value;
+
+            const newBook = new Book(newTitle, newAuthor, newPages);
+
+            myLibrary.push(newBook);
+            updateBookShelf(myLibrary);
         } else {
             form.reportValidity();
         }
     })
-    // const newTitle = window.prompt("What is the title of the book you would like to add to the library?");
-    // const newAuthor = window.prompt("Who wrote this book?");
-    // const newPages = window.prompt("How many pages does this book have?");
-    
-    const newBook = new Book(newTitle, newAuthor, newPages);
-
-    myLibrary.push(newBook);
-    updateBookShelf(myLibrary);
 }
 
 const removeFromLibrary = (bookIndex) => {
