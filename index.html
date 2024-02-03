@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="dist/output.css">
     
 </head>
-<body class="p-28 flex flex-col items-center">
-    <button id="add" class="rounded border w-1/4 cursor-pointer border-gray-600 hover:bg-yellow-300 hover:border-gray-400">📚 NEW BOOK 📚</button>
+<body class="p-28 flex flex-col items-center bg-[url('/src/library.jpg')] bg-cover bg-center h-fit">
+    <button id="add" class="rounded border w-1/4 cursor-pointer bg-white/80 border-gray-600 hover:bg-green-300/80 hover:border-gray-400">📚 NEW BOOK 📚</button>
     <dialog id="newBookInput">
         <form method="dialog">
             <p><label>Title: </label><input type="text" name="title" required minlength="1" maxlength="100" placeholder="Book Title"></p>
@@ -18,10 +18,10 @@
         </form>
     </dialog>
     <br>
-    <hr class="border border-gray-200 w-1/4">
+    <hr>
     <br>
-    <div class="flex flex-col items-center justify-center bg-[url('../src/bookshelf.jpg')] bg-cover bg-center h-fit">
-        <h1 class="font-semibold text-2xl my-4 mx-96 text-orange-400 tracking-wider">MY LIBRARY</h1>
+    <div class="flex flex-col items-center justify-center bg-[url('../src/bookshelf.png')] bg-cover bg-center h-fit">
+        <h1 class="font-semibold text-2xl my-4 mx-96 text-orange-400 bg-white/80 rounded px-6 tracking-wider">MY LIBRARY</h1>
         <div class="grid grid-cols-3 grid-rows-7 gap-x-6 gap-y-4 w-[30rem] justify-items-center h-[56rem] translate-y-8" id="bookShelf"></div>
     </div>
     
