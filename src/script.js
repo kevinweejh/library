@@ -24,31 +24,31 @@ class Book {
     }
 }
 
+const modal = document.getElementById('newBookInput');
+const form = modal.querySelector('form');
+
 const addToLibrary = (e) => {
     e.preventDefault();
-    const modal = document.getElementById('newBookInput');
-    const form = modal.querySelector('form');
-
     modal.showModal();
     form.reset();
-
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        if (form.checkValidity()) {
-            modal.close();
-            const newTitle = form.querySelector("[name='title']").value;
-            const newAuthor = form.querySelector("[name='author']").value;
-            const newPages = form.querySelector("[name='pageCount']").value;
-
-            const newBook = new Book(newTitle, newAuthor, newPages);
-
-            myLibrary.push(newBook);
-            updateBookShelf(myLibrary);
-        } else {
-            form.reportValidity();
-        }
-    })
 }
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (form.checkValidity()) {
+        modal.close();
+        const newTitle = form.querySelector("[name='title']").value;
+        const newAuthor = form.querySelector("[name='author']").value;
+        const newPages = form.querySelector("[name='pageCount']").value;
+
+        const newBook = new Book(newTitle, newAuthor, newPages);
+
+        myLibrary.push(newBook);
+        updateBookShelf(myLibrary);
+    } else {
+        form.reportValidity();
+    }
+})
 
 const removeFromLibrary = (bookIndex) => {
     console.log(`removing book ${bookIndex}`);
