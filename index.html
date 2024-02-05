@@ -7,14 +7,21 @@
     <link rel="stylesheet" href="dist/output.css">
     
 </head>
-<body class="p-28 flex flex-col items-center bg-[url('/src/library.jpg')] bg-cover bg-center h-fit">
+<body class="p-28 flex flex-col items-center bg-[url('../src/library.jpg')] bg-cover bg-center h-fit">
     <button id="add" class="rounded border w-1/4 cursor-pointer bg-white/80 border-gray-600 hover:bg-green-300/80 hover:border-gray-400">📚 NEW BOOK 📚</button>
-    <dialog id="newBookInput">
+    <dialog id="newBookInput" class="border border-solid border-gray-800 rounded-[8px] shadow-md p-5 w-80 bg-white backdrop:bg-black/50">
+        <header class="mb-5 pb-2.5 border-b border-gray-400">
+            <h1 class="m-0 text-2xl">Add New Book</h1>
+        </header>
         <form method="dialog">
-            <p><label>Title: </label><input type="text" name="title" required minlength="1" maxlength="100" placeholder="Book Title"></p>
-            <p><label>Author: </label><input type="text" name="author" required minlength="1" maxlength="100" placeholder="Author Name"></p>
-            <p><label>Page Count: </label><input type="number" name="pageCount" required min="1" max="10000" placeholder="Page Count"></p>
-            <p><button type="submit">Submit</button></p>
+            <div class="mb-5">
+                <p class="my-2"><label>Title: </label><input type="text" name="title" required minlength="1" maxlength="100" placeholder="Book Title"></p>
+                <p class="my-2"><label>Author: </label><input type="text" name="author" required minlength="1" maxlength="100" placeholder="Author Name"></p>
+                <p class="my-2"><label>Page Count: </label><input type="number" name="pageCount" required min="1" max="10000" placeholder="Page Count"></p>
+            </div>
+            <footer class="text-right border-t border-gray-400 pt-2.5">
+                <p><button type="submit" class="bg-blue-600 text-white border-0 rounded-md py-2 px-8 ml-2.5 cursor-pointer hover:bg-blue-900">Submit</button></p>
+            </footer>
         </form>
     </dialog>
     <br>
@@ -22,8 +29,9 @@
     <br>
     <div class="flex flex-col items-center justify-center bg-[url('../src/bookshelf.png')] bg-cover bg-center h-fit">
         <h1 class="font-semibold text-2xl my-4 mx-96 text-orange-400 bg-white/80 rounded px-6 tracking-wider">MY LIBRARY</h1>
-        <div class="grid grid-cols-3 grid-rows-7 gap-x-6 gap-y-4 w-[30rem] justify-items-center h-[56rem] translate-y-8" id="bookShelf"></div>
+        <div class="grid grid-cols-3 grid-rows-7 gap-x-6 gap-y-4 w-[30rem] justify-items-center h-[59rem] translate-y-8" id="bookShelf"></div>
     </div>
+    
     
     <script src="src/script.js"></script>
 </body>
